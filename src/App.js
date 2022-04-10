@@ -1,24 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import Nav from './Component/Nav'
+import About from './Component/About';
+import Search from './Component/searchbar';
+import Cocktail from './Component/cocktail';
+import {ItemProvider} from './Component/Context/ItemProvider'
+import {BrowserRouter,Routes,Route} from 'react-router-dom' 
+import SingleComponent from './Component/SingleComponent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ItemProvider>
+    <BrowserRouter >
+       <Nav></Nav>
+      {/* <SingleComponent></SingleComponent> */}
+       <Routes>
+            <Route path="/" element={<Cocktail></Cocktail>}></Route>
+           <Route path="/about" element={<About></About>}>
+           </Route>
+           <Route path="/cocktail/:id" element={<SingleComponent></SingleComponent>}></Route>
+       </Routes>
+
+
+    </BrowserRouter>
+    </ItemProvider>
   );
 }
 
