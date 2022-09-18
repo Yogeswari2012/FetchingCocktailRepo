@@ -34,7 +34,8 @@ const searchHandler = (e)=>
 
 
 
-const items ={element:element, fetchItems:fetchItems , searchHandler:searchHandler , search:search}
+const items ={element:element, 
+    fetchItems:fetchItems , searchHandler:searchHandler , search:search}
 
 
 return (

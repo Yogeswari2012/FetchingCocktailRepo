@@ -21,8 +21,8 @@ const fetchcocktails = ()=>
         })
         .then(resultlist =>
             {
-                console.log(resultlist);
-                 console.log(resultlist.drinks);
+                // console.log(resultlist);
+                //  console.log(resultlist.drinks);
                  if(resultlist.drinks===null)
                  {
                      setList([]);
@@ -50,8 +50,16 @@ useEffect(()=>
 
 console.log("Inside useeffect")
 console.log(items.search);
-    fetchcocktails();
 
+const timeout=setTimeout(()=>
+{
+    fetchcocktails();
+},300)
+    
+return(()=>
+{
+    clearTimeout(timeout);
+})
 
 
 },[items.search])

@@ -5,13 +5,13 @@ import About from './Component/About';
 import Search from './Component/searchbar';
 import Cocktail from './Component/cocktail';
 import {ItemProvider} from './Component/Context/ItemProvider'
-import {BrowserRouter,Routes,Route} from 'react-router-dom' 
+import {HashRouter,Routes,Route} from 'react-router-dom' 
 import SingleComponent from './Component/SingleComponent';
 
 function App() {
   return (
     <ItemProvider>
-    <BrowserRouter >
+    <HashRouter >
        <Nav></Nav>
       {/* <SingleComponent></SingleComponent> */}
        <Routes>
@@ -22,7 +22,7 @@ function App() {
        </Routes>
 
 
-    </BrowserRouter>
+    </HashRouter>
     </ItemProvider>
   );
 }
